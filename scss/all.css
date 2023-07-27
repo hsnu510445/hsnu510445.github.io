@@ -1,0 +1,33 @@
+body {
+  background-color: white;
+}
+body .card-wrap {
+  width: 1004px;
+  height: 591px;
+  perspective: 1000;
+  margin: 100px auto 0;
+}
+body .card-wrap:active .card {
+  transform: rotateY(-180deg);
+}
+body .card-wrap .card, body .card-wrap .front, body .card-wrap .back {
+  width: 1004px;
+  height: 591px;
+}
+body .card-wrap .card {
+  transform-style: preserve-3d;
+  transition: all ease-in-out 2s;
+  position: relative;
+}
+body .card-wrap .front, body .card-wrap .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body .card-wrap .front {
+  z-index: 2;
+}
+body .card-wrap .back {
+  transform: rotateY(180deg);
+}/*# sourceMappingURL=all.css.map */

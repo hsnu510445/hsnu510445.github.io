@@ -1,0 +1,33 @@
+body{
+    background-color: white;
+    .card-wrap{
+        width: 1004px;
+        height: 591px;
+        perspective: 1000;
+        margin: 100px auto 0;
+        &:active .card{
+            transform: rotateY(-180deg);
+        }
+        .card, .front, .back{
+            width: 1004px;
+            height: 591px;
+        }
+        .card{
+            transform-style: preserve-3d;
+            transition: all ease-in-out 2s;
+            position: relative;
+        }
+        .front, .back{
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .front{
+            z-index: 2;
+        }
+        .back{
+            transform: rotateY(180deg)
+        }
+    }
+}
