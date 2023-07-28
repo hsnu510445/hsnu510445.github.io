@@ -1,33 +1,79 @@
 body {
   background-color: white;
 }
-body .card-wrap {
+
+.flip-card {
+  background-color: white;
   width: 1004px;
   height: 591px;
-  perspective: 1000;
-  margin: 100px auto 0;
+  display: flex;
+  justify-content: center;
 }
-body .card-wrap:active .card {
-  transform: rotateY(-180deg);
-}
-body .card-wrap .card, body .card-wrap .front, body .card-wrap .back {
-  width: 1004px;
-  height: 591px;
-}
-body .card-wrap .card {
-  transform-style: preserve-3d;
-  transition: all ease-in-out 2s;
+
+.flip-card-inner {
+  align-items: center;
   position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
 }
-body .card-wrap .front, body .card-wrap .back {
-  backface-visibility: hidden;
+
+.flip-card.interactive .flip-card-inner {
+  transition: transform 0.6s;
+}
+
+.click {
+  cursor: pointer;
+}
+
+.flip-card.click.clicked .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.animation .flip-card-inner {
+  animation-name: flipCard;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+}
+
+@keyframes flipCard {
+  20% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(180deg);
+  }
+  75% {
+    transform: rotateY(180deg);
+  }
+  80% {
+    transform: rotateY(0deg);
+  }
+}
+.flip-card-front,
+.flip-card-back {
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
-body .card-wrap .front {
+
+.flip-card-front {
   z-index: 2;
 }
-body .card-wrap .back {
+
+.flip-card-back {
   transform: rotateY(180deg);
+}
+
+.card-1 {
+  background-image: url("../img/1.png");
+  background-repeat: no-repeat;
+}
+
+.card-2 {
+  background-image: url("../img/2.png");
+  background-repeat: no-repeat;
 }/*# sourceMappingURL=all.css.map */

@@ -6,17 +6,23 @@
     <title>HSUEH, YU-TING</title>
     <link  rel = "stylesheet"  href = "./scss/all.css" >
 </head>
+
+
 <body>
-    <div class="card-wrap" ontouchstart="this.classList.toggle('hover');">
-        <div class="card">
-            <div class="front">
-                <img src="./img/1.png" alt="">
-            </div>
-            <div class="back">
-                <img src="./img/2.png" alt="">
+    <div>
+        <div class="flip-card click interactive" onclick="addClickedCss(this)">
+            <div class="flip-card-inner">
+                <div class="flip-card-front card-1">
+                </div>
+                <div class="flip-card-back card-2">
+                </div>
             </div>
         </div>
     </div>
-    
+    <script>
+        function addClickedCss(e) {
+            e.classList.toggle('clicked');
+        }
+    </script>
 </body>
 </html>
